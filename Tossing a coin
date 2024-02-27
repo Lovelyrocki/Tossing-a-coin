@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title></title>
+  <<style>
+    #toss{
+  border:2px solid black;
+  background-color:rgb(255,215,0);
+  height:100px;
+  width:100px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:40px;
+  margin-top:500px;
+  
+  
+}
+@keyframes rakesh{
+  0%{
+    transform: rotateY(0deg);
+    font-weight:0;
+    background-color:black;
+  }
+  50%{
+   transform: rotateY(360deg);
+   background-color:rgba(0,0,0,0,1);
+  }
+  100%{
+    tranform:rotateY(360deg);
+    background-color:black;
+    font-weight: 100;
+  }
+}
+.rotate{
+  animation:rakesh 1s ease-in-out 0s 3 normal;
+}
+
+
+  </style>
+</head>
+
+<body>
+ <script>
+   function func(){
+     let coin=document.getElementById("toss");
+     
+     coin.classList.add("rotate");
+     if(Math.floor(Math.random()*2)==0)
+     {
+       coin.style.backgroundColor="gold";
+       coin.innerText="HEAD";
+     }
+     else{
+       coin.style.backgroundColor="gold ";
+       coin.innerText="TAIL";
+     }
+   }
+   function reset(){
+     let coin=document.getElementById("toss");
+     coin.classList.remove("rotate");
+     void coin.offsetWidth;
+     func();
+   }
+ </script>
+<center><div id="toss"onclick="func()">toss</div>
+<br><br>
+<button id="butt"onclick="reset()"> click here to toss again</button>
+</center>
+</body>
+
+</html>
